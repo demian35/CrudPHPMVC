@@ -1,6 +1,6 @@
 <?php
 
-class EmpleadosController{
+class EmpleadoController{
     private $empleado;
     //metodo constructor para nuestro controlador
     public function __construct(){
