@@ -14,7 +14,7 @@ class Empleado{
     //funcion para insertar en la base de datos
     public function insertar($nombre, $apellidos, $matricula, $correo)
     {
-        $sentencia = $this->bd->prepare("INSERT INTO empleados(idEmpleados,idEmpleados, nombre, apellidos, matricula, correo) VALUES(NULL,:nombre,:apellidos,:matricula,:correo)");
+        $sentencia = $this->bd->prepare("INSERT INTO empleados(idEmpleados, nombre, apellidos, matricula, correo) VALUES(NULL,:nombre,:apellidos,:matricula,:correo)");
         //le pasamos el nombre
         $sentencia->bindParam(':nombre', $nombre);
 
