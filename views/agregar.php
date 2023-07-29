@@ -1,5 +1,5 @@
 <?php
-include("../templates/header.php")
+include("./templates/header.php")
 ?>
 
 <style>
@@ -14,7 +14,7 @@ include("../templates/header.php")
             Registra Empleado
         </div>
         <div class="card-body">
-            <form action="../crud/store.php" method="POST">
+            <form action="store.php" method="POST">
 
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -48,5 +48,5 @@ include("../templates/header.php")
 
 
 <?php
-include("../templates/footer.php")
+include("./templates/footer.php")
 ?>

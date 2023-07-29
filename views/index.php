@@ -1,5 +1,5 @@
 <?php
-include("../templates/header.php")
+include("./templates/header.php")
 ?>
 
 
@@ -17,7 +17,7 @@ include("../templates/header.php")
     <h1>Registra empleado</h1>
     <br>
     <div class="center-screen">
-        <a name="" id="" class="btn btn-primary" href="../crud/agregar.php" role="button">Agregar</a>
+        <a class="btn btn-primary" href="agregar.php" role="button">Agregar</a>
     </div>
 
     <br>
@@ -49,5 +49,5 @@ include("../templates/header.php")
 
 
 <?php
-include("../templates/footer.php")
+include("./templates/footer.php")
 ?>

@@ -18,10 +18,10 @@
 
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../../CerrarSesion.php">Cerrar Sesion </a>
+                        <a class="nav-link active" href="#">Cerrar Sesion </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../crud/index.php">Inicio</a>
+                        <a class="nav-link" href="../../views/index.php">Inicio</a>
                     </li>
 
 
