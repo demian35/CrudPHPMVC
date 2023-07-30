@@ -15,6 +15,7 @@ class EmpleadoController{
 
     }
 
+    //funcion para mostrar los registros de la base de datos 
     public function muestra($id){
         return($this->empleado->muestraRegistros($id) !=false)?$this->empleado->muestraRegistros($id):header("Location:agregar.php");
     }
