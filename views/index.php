@@ -6,7 +6,7 @@ include("./templates/header.php")
 include("../controllers/EmpleadoController.php");
 
 $empleado=new EmpleadoController;
-$resultados=$empleado->muestra($_GET['idEmpleados']);
+$resultados=$empleado->muestra();//mostramos los resultados
 
 
 ?>
@@ -49,7 +49,7 @@ $resultados=$empleado->muestra($_GET['idEmpleados']);
                         <td> <?php echo $empleados[0] ?></td>
                         <td scope="row"><?php echo $empleados[1] ?></td>
                         <td><?php echo $empleados[2] ?></td>
-                        <td><?php echo $empleados[3] ?>/td>
+                        <td><?php echo $empleados[3] ?></td>
                         <td><?php echo $empleados[4] ?></td>
                     </tr>
                     <?php } ?>

@@ -33,9 +33,9 @@ class Empleado{
     }
 
     //funcion que nos muestra todos los registros de la base de datos
-    public function muestraRegistros($id){
-        $sentencia=$this->bd->prepare("SELECT * FROM modelovistacontrolador.empleados");
-        $sentencia->bindParam(":id", $id);//le pasamos el id agregado
-        return ($sentencia->execute())? $sentencia->fetch():false;//si se ejecuta la sentencia mandamos los registros si no false
+    public function consulta($sql){
+        $consulta=$this->bd->prepare($sql);//preparamos la consulta
+        $consulta->execute();//ejecutamos la consulta
+        return $consulta->fetchAll();//regresamos todos los elementos que estan en la bd
     }
 }
