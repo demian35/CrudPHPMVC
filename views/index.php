@@ -2,6 +2,15 @@
 include("./templates/header.php")
 ?>
 
+<?php
+include("../controllers/EmpleadoController.php");
+
+$empleado=new EmpleadoController;
+$resultados=$empleado->muestra($_GET['idEmpleados']);
+
+
+?>
+
 
     <style>
         .center-screen {
@@ -27,6 +36,7 @@ include("./templates/header.php")
             <table class="table table-primary">
                 <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Matricula</th>
@@ -34,12 +44,15 @@ include("./templates/header.php")
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($resultados as $empleados) { ?>
                     <tr class="">
-                        <td scope="row">Fulanito</td>
-                        <td>Perez Salgado</td>
-                        <td>R1C3</td>
-                        <td>ful@correo.com</td>
+                        <td> <?php echo $empleados[0] ?></td>
+                        <td scope="row"><?php echo $empleados[1] ?></td>
+                        <td><?php echo $empleados[2] ?></td>
+                        <td><?php echo $empleados[3] ?>/td>
+                        <td><?php echo $empleados[4] ?></td>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
