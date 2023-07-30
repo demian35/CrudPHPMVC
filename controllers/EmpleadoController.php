@@ -11,7 +11,7 @@ class EmpleadoController{
     //metodo para guardar los datos en la base de datosS
     public function guardar($nombre,$apellidos,$matricula,$correo){
         $id=$this->empleado->insertar($nombre,$apellidos,$matricula,$correo);
-        return ($id!=false)?header("Location:show.php?idEmpleados=".$id):header("Location:agregar.php");
+        return ($id!=false)?header("Location:index.php?idEmpleados=".$id):header("Location:agregar.php");
 
     }
 
