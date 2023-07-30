@@ -31,4 +31,11 @@ class Empleado{
         //ejecutamos la sentencia y regresamos el ultimo id insertado
         return($sentencia->execute())? $this->bd->lastInsertId(): false;
     }
+
+    //funcion que nos muestra todos los registros de la base de datos
+    public function muestraRegistros($id){
+        $sentencia=$this->bd->prepare("SELECT * FROM modelovistacontrolador.empleados WHERE idEmpleados= :id LIMIT 1; ");
+        $sentencia->bindParam(":id", $id);//le pasamos el id agregado
+        return ($sentencia->execute())? $sentencia->fetch():false;//si se ejecuta la sentencia mandamos los registros si no false
+    }
 }
