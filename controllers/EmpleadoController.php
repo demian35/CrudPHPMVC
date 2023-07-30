@@ -14,6 +14,10 @@ class EmpleadoController{
         return ($id!=false)?header("Location:show.php?idEmpleados=".$id):header("Location:agregar.php");
 
     }
+
+    public function muestra($id){
+        return($this->empleado->muestraRegistros($id) !=false)?$this->empleado->muestraRegistros($id):header("Location:agregar.php");
+    }
     
 }
 
