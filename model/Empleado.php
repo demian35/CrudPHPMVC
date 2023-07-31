@@ -38,4 +38,27 @@ class Empleado{
         $consulta->execute();//ejecutamos la consulta
         return $consulta->fetchAll();//regresamos todos los elementos que estan en la bd
     }
+
+    public function actualiza($id,$nombre, $apellidos, $matricula, $correo){
+        $sentencia=$this->bd->prepare("UPDATE empleados SET nombre= :nombre , apellidos= :nombre , matricula= :matricula , correo= :correo WHERE idEmpleados = :id");
+        
+        //le pasamos el nombre
+        $sentencia->bindParam(':id', $id);
+
+        
+        //le pasamos el nombre
+        $sentencia->bindParam(':nombre', $nombre);
+
+        //le pasamos los apellidos
+        $sentencia->bindParam(':apellidos', $apellidos);
+
+        //le pasamos la matricula
+        $sentencia->bindParam(':matricula', $matricula);
+
+
+        //le pasamos el correo electronico
+        $sentencia->bindParam(':correo', $correo);
+        
+        return($sentencia->execute())?$id: false;
+    }
 }

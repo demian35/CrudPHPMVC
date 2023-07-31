@@ -20,6 +20,10 @@ class EmpleadoController{
         $consulta=$this->empleado->consulta("SELECT * FROM modelovistacontrolador.empleados;");
         return $consulta;
     }
+
+    public function actualizaEmpleado($id,$nombre, $apellidos, $matricula, $correo){
+        return($this->empleado->actualiza($id,$nombre, $apellidos, $matricula, $correo) != false)?header("Location:index.php?idEmpleados=".$id):header("Location:editar.php");
+    }
     
 }
 
