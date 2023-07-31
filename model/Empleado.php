@@ -35,7 +35,7 @@ class Empleado{
     public function selcionaRegistro($id){
         $consulta=$this->bd->prepare("SELECT * FROM empleados WHERE idEmpleados= :id LIMIT 1");
         $consulta->bindParam(':id',$id);
-        return($consulta->execute())?$consulta->fetch(PDO::FETCH_LAZY):false;
+        return($consulta->execute())?$consulta->fetch():false;
     }
 
 
