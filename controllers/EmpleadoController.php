@@ -15,6 +15,11 @@ class EmpleadoController{
 
     }
 
+    //funcion que solo muestra un registro de la base de datos
+    public function muestraRegistro($id){
+        return($this->empleado->selcionaRegistro($id) !=false)? $this->empleado->selcionaRegistro($id):header("Location:show.php");
+    }
+
     //funcion para mostrar los registros de la base de datos 
     public function muestra(){
         $consulta=$this->empleado->consulta("SELECT * FROM modelovistacontrolador.empleados;");

@@ -31,6 +31,13 @@ class Empleado{
         //ejecutamos la sentencia y regresamos el ultimo id insertado
         return($sentencia->execute())? $this->bd->lastInsertId(): false;
     }
+    //funcion para seleccionar solo un registro de la bd
+    public function selcionaRegistro($id){
+        $consulta=$this->bd->prepare("SELECT * FROM empleados WHERE idEmpleados= :id LIMIT 1");
+        $consulta->bindParam(':id',$id);
+        return($consulta->execute())?$consulta->fetch(PDO::FETCH_LAZY):false;
+    }
+
 
     //funcion que nos muestra todos los registros de la base de datos
     public function consulta($sql){
