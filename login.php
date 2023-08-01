@@ -2,9 +2,10 @@
 
 include("controladorlogin.php");
 
-    include_once("./config/conexionBD.php");
-    $conexion=new conexionBD;
-    $conexion->conexion();
+    
+
+
+
 
 ?>
 
@@ -60,6 +61,13 @@ include("controladorlogin.php");
                         <?php if(isset($notificacion)){ ?>
                         <div class="alert alert-danger" role="alert">
                             <?php echo $notificacion; ?>
+
+                        </div>
+                        <?php } ?>
+
+                        <?php if(isset($mensaje)){ ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $mensaje; ?>
 
                         </div>
                         <?php } ?>
