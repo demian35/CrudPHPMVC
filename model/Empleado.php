@@ -48,7 +48,7 @@ class Empleado{
 
     //funcion que actualiza un registro 
     public function actualiza($id,$nombre, $apellidos, $matricula, $correo){
-        $sentencia=$this->bd->prepare("UPDATE empleados SET nombre= :nombre , apellidos= :nombre , matricula= :matricula , correo= :correo WHERE idEmpleados = :id");
+        $sentencia=$this->bd->prepare("UPDATE empleados SET nombre= :nombre , apellidos= :apellidos , matricula= :matricula , correo= :correo WHERE idEmpleados = :id");
         
         //le pasamos el nombre
         $sentencia->bindParam(':id', $id);
