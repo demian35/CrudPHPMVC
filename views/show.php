@@ -34,7 +34,7 @@ $resultado = $empleado->muestraRegistro($_GET['idEmpleados']);
             if (confirm("¿Estás seguro de que deseas eliminar a este empleado?")) {
                 // Si el usuario confirma, redirige a la página o ejecuta la lógica para eliminar el registro
                 
-                window.location.href = "delete.php?idEmpleados=<?php $resultado[0] ?>";
+                window.location.href = "delete.php?idEmpleados=<?= $resultado[0] ?>";
             }
         });
     </script>
@@ -61,11 +61,11 @@ $resultado = $empleado->muestraRegistro($_GET['idEmpleados']);
                 <tbody>
 
                     <tr class="">
-                        <td> <?php echo $resultado[0] ?></td>
-                        <td scope="row"><?php echo $resultado[1] ?></td>
-                        <td><?php echo $resultado[2] ?></td>
-                        <td><?php echo $resultado[3] ?></td>
-                        <td><?php echo $resultado[4] ?></td>
+                        <td> <?= $resultado[0] ?></td>
+                        <td scope="row"><?= $resultado[1] ?></td>
+                        <td><?=$resultado[2] ?></td>
+                        <td><?=$resultado[3] ?></td>
+                        <td><?=$resultado[4] ?></td>
                         <td>
 
                         </td>
