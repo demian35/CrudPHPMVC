@@ -24,7 +24,6 @@ $resultado = $empleado->muestraRegistro($_GET['idEmpleados']);
 <h1 class="text-center">Empleado</h1>
 <div class="center-screen">
     <a class="btn btn-primary" href="index.php" role="button">Regresar a inicio</a>
-    <a class="btn btn-info" href="editar.php?idEmpleados=<?php $resultado[0] ?>" role="button">Editar</a>
     <a class="btn btn-danger" id="delete-btn" href="#" role="button">Borrar</a>
     <script>
         document.getElementById("delete-btn").addEventListener("click", function(event) {
