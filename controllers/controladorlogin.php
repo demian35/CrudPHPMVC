@@ -3,7 +3,7 @@
 
 <?php
 
-include_once("./config/conexionBD.php");
+include_once("../config/conexionBD.php");
 $bd=new conexionBD;
 
 if(!empty($_POST['btningresar']))
@@ -19,6 +19,7 @@ if(empty($_POST['usuario']) and empty($_POST['contrasena']) ){//si los campos es
     $consulta->bindParam(':usuario',$usuario);
     $consulta->bindParam(':contrasena',$contrasena);
     $consulta->execute();
+    session_start();//iniciamos la sesion
     if($datos=$consulta->fetchObject()){
         header("Location: /views/index.php");
     }else{
