@@ -46,6 +46,7 @@ class Empleado{
         return $consulta->fetchAll();//regresamos todos los elementos que estan en la bd
     }
 
+    //funcion que actualiza un registro 
     public function actualiza($id,$nombre, $apellidos, $matricula, $correo){
         $sentencia=$this->bd->prepare("UPDATE empleados SET nombre= :nombre , apellidos= :nombre , matricula= :matricula , correo= :correo WHERE idEmpleados = :id");
         
