@@ -69,4 +69,10 @@ class Empleado{
         
         return($sentencia->execute())?$id: false;
     }
+
+    public function borra($id){
+        $sentencia=$this->bd->prepare("DELETE FROM empleados WHERE idEmpleados= :id");
+        $sentencia->bindParam(':id', $id);
+        return($sentencia->execute())? true: false;
+    }
 }
