@@ -29,7 +29,7 @@ $usuario = $empleado->muestraRegistro($_GET['idEmpleados']);
 
             <div class="form-group">
                     <label for="idEmpleado">ID</label>
-                    <input type="text" readonly class="form-control" name="nombre" value="<?= $usuario[0] ?>" id="idEmpleado">
+                    <input type="text" readonly class="form-control" name="idEmpleado" value="<?= $usuario[0] ?>" id="idEmpleado">
                 </div>
 
                 <div class="form-group">
