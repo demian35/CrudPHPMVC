@@ -62,31 +62,14 @@ $resultados = $empleado->muestra(); //mostramos los resultados
                             <td>
                                 <a class="btn btn-secondary" href="show.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Ver Empleado</a>
                                 <a class="btn btn-success" href="editar.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Editar</a>
-                                <a class="btn btn-danger" id="delete-btn" href="delete.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Borrar</a>
+                                <a class="btn btn-danger" id="delete-btn" href="delete.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button"  onclick="return confirmDelete()">Borrar</a>
 
                             </td>
                         </tr> <!-- Script para el manejo de clics en los botones de borrado -->
                     <?php } ?>
                 </tbody>
                 <!-- Script para el manejo de clics en los botones de borrado -->
-                <script>
-                    const deleteButtons = document.querySelectorAll(".delete-btn");
-
-                    deleteButtons.forEach(button => {
-                        button.addEventListener("click", function(event) {
-                            event.preventDefault(); // Evitar que el enlace se ejecute de inmediato
-
-                            // Obtener el ID del empleado a eliminar desde el atributo data
-                            const idEmpleado = button.getAttribute("data-id-empleado");
-
-                            // Mostrar una alerta para confirmar la eliminación
-                            if (confirm("¿Estás seguro de que deseas eliminar a este empleado?")) {
-                                // Si el usuario confirma, redirige a la página o ejecuta la lógica para eliminar el registro
-                                window.location.href = `delete.php?idEmpleados=${idEmpleado}`;
-                            }
-                        });
-                    });
-                </script>
+                
 
             <?php else : ?>
                 <!-- Si no hay resultados -->
@@ -97,6 +80,13 @@ $resultados = $empleado->muestra(); //mostramos los resultados
         </table>
     </div>
 </div>
+
+<script>
+    // Función para mostrar la alerta de confirmación antes de eliminar el registro
+    function confirmDelete() {
+        return confirm("¿Estás seguro de que deseas eliminar a este empleado?");
+    }
+</script>
 
 
 
