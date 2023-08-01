@@ -21,6 +21,9 @@ if(empty($_POST['usuario']) and empty($_POST['contrasena']) ){//si los campos es
     $consulta->execute();
     session_start();//iniciamos la sesion
     if($datos=$consulta->fetchObject()){
+        session_start();
+        $_SESSION['user']= $usuario;
+        $_SESSION['nombreUsuario'] = $datos->usuario;
         header("Location: /views/index.php");
     }else{
         $mensaje="Datos incorrectos";

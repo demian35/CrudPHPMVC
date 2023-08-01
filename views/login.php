@@ -2,7 +2,11 @@
 
 include("../controllers/controladorlogin.php");
 
-
+session_start(); // Inicia una sesión PHP o reanuda una sesión existente
+if (isset($_SESSION['user']) && $_SESSION['user'] === $usuario) {
+    header("Location: /views/index.php");
+    exit; // Es importante agregar exit después de la redirección para detener la ejecución del código en este punto
+}
 ?>
 
 <!doctype html>
