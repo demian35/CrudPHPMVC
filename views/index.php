@@ -49,13 +49,27 @@ $resultados = $empleado->muestra(); //mostramos los resultados
             <tbody>
                 <?php foreach ($resultados as $empleados) { ?>
                     <tr class="">
-                        <td> <?=$empleados['idEmpleados'] ?></td>
+                        <td> <?= $empleados['idEmpleados'] ?></td>
                         <td scope="row"><?= $empleados['nombre'] ?></td>
                         <td><?= $empleados['apellidos'] ?></td>
                         <td><?= $empleados['matricula'] ?></td>
                         <td><?= $empleados['correo'] ?></td>
                         <td>
-                            <a class="btn btn-info" href="show.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Ver Empleado</a>
+                            <a class="btn btn-secondary" href="show.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Ver Empleado</a>
+                            <a class="btn btn-success" href="editar.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Editar</a>
+                            <a class="btn btn-danger"  id="delete-btn" href="#" role="button">Borrar</a>
+                            <script>
+                                document.getElementById("delete-btn").addEventListener("click", function(event) {
+                                    event.preventDefault(); // Evitar que el enlace se ejecute de inmediato
+
+                                    // Mostrar una alerta para confirmar la eliminación
+                                    if (confirm("¿Estás seguro de que deseas eliminar a este empleado?")) {
+                                        // Si el usuario confirma, redirige a la página o ejecuta la lógica para eliminar el registro
+
+                                        window.location.href = "delete.php?idEmpleados=<?= $empleados['idEmpleados'] ?>";
+                                    }
+                                });
+                            </script>
                         </td>
                     </tr>
                 <?php } ?>
