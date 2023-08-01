@@ -49,14 +49,13 @@ $resultados = $empleado->muestra(); //mostramos los resultados
             <tbody>
                 <?php foreach ($resultados as $empleados) { ?>
                     <tr class="">
-                        <td> <?php echo $empleados[0] ?></td>
-                        <td scope="row"><?php echo $empleados[1] ?></td>
-                        <td><?php echo $empleados[2] ?></td>
-                        <td><?php echo $empleados[3] ?></td>
-                        <td><?php echo $empleados[4] ?></td>
+                        <td> <?=$empleados['idEmpleados'] ?></td>
+                        <td scope="row"><?= $empleados['nombre'] ?></td>
+                        <td><?= $empleados['apellidos'] ?></td>
+                        <td><?= $empleados['matricula'] ?></td>
+                        <td><?= $empleados['correo'] ?></td>
                         <td>
-                            <a class="btn btn-danger" href="delete.php?idEmpleados=<?php $empleados[0]; ?>" role="button">Eliminar</a>
-                            <a class="btn btn-info" href="editar.php?idEmpleados=" <?php $resultados[0]; ?> role="button">Editar</a>
+                            <a class="btn btn-info" href="show.php?idEmpleados=<?= $empleados['idEmpleados']; ?>" role="button">Ver Empleado</a>
                         </td>
                     </tr>
                 <?php } ?>
