@@ -1,3 +1,13 @@
+<?php
+
+include("controladorlogin.php");
+
+    include_once("./config/conexionBD.php");
+    $conexion=new conexionBD;
+    $conexion->conexion();
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -39,16 +49,17 @@
                         <input  type="password" class="form-control" name="contrasena" placeholder="Password">
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+
+                        <input class="btn btn-primary" name="btningresar" type="submit" value="Inicia sesion">
                         </form>
                         
                         
 
                     </div>
                     <div class="card-footer">
-                        <?php if(isset($mensaje)){ ?>
+                        <?php if(isset($notificacion)){ ?>
                         <div class="alert alert-danger" role="alert">
-                            <?php echo $mensaje; ?>
+                            <?php echo $notificacion; ?>
 
                         </div>
                         <?php } ?>
