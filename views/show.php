@@ -33,8 +33,8 @@ $resultado = $empleado->muestraRegistro($_GET['idEmpleados']);
             // Mostrar una alerta para confirmar la eliminación
             if (confirm("¿Estás seguro de que deseas eliminar a este empleado?")) {
                 // Si el usuario confirma, redirige a la página o ejecuta la lógica para eliminar el registro
-                // Por ejemplo, puedes usar window.location.href para redirigir a otra página:
-                // window.location.href = "ruta_para_eliminar_registro.php";
+                
+                window.location.href = "delete.php?idEmpleados=<?php $resultado[0] ?>";
             }
         });
     </script>
