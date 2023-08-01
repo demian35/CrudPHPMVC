@@ -31,6 +31,7 @@ class EmpleadoController{
         return($this->empleado->actualiza($id,$nombre, $apellidos, $matricula, $correo) != false)?header("Location:show.php?idEmpleados=".$id):header("Location:index.php");
     }
 
+    //funcion que usa la funcion borra del empleado
     public function borraRegistro($id){
         return($this->empleado->borra($id))? header("Location:index.php"):header("Location:show.php?idEmpleados".$id);
     }
