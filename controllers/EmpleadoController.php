@@ -26,8 +26,9 @@ class EmpleadoController{
         return $consulta;
     }
 
+    //funcion que usa la funcion actualiza del empleado
     public function actualizaEmpleado($id,$nombre, $apellidos, $matricula, $correo){
-        return($this->empleado->actualiza($id,$nombre, $apellidos, $matricula, $correo) != false)?header("Location:index.php?idEmpleados=".$id):header("Location:editar.php");
+        return($this->empleado->actualiza($id,$nombre, $apellidos, $matricula, $correo) != false)?header("Location:show.php?idEmpleados=".$id):header("Location:index.php");
     }
     
 }
