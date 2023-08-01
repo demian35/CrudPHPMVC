@@ -24,7 +24,7 @@
 
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Cerrar Sesion </a>
+                        <a class="nav-link" href="/views/cerrar.php">Cerrar sesion</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/views/index.php">Inicio</a>
